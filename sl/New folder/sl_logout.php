@@ -1,0 +1,65 @@
+<?php
+session_start();
+$user=$_SESSION['username'];
+
+include '../class/cms_class.php';
+
+$obj = new emnc();
+
+//Setup our connection vars
+$obj->host = 'localhost';
+$obj->username = 'root';
+$obj->password = '';
+$obj->db = 'emnc';
+
+//Connect To Our DB
+$obj->connect();
+?>
+<html>
+<head>
+<title>Logout</title>
+<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+ 
+</head>
+
+<body>
+<div id="space">
+</div>
+<div id="page-wrap">
+	<?php
+
+echo "<font><i>You was logout.</i></font><br><br><br>Back to <a href='../index.php'>Main Page</a>.";
+
+
+?>
+</div>
+<footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Enactus Malaysia National Cup</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</footer>
+
+</body>
+</html>
